@@ -13,7 +13,7 @@ describe("getMarkupWrap(nodeName : String)", function() {
         });
     });
 
-    it("should return null if nodeName should not be wraped array helper if needed", function() {
+    it("should create DOM nodes from markup", function() {
         var nodes = createNodesFromMarkup("<div></div>"),
             div = nodes[0];
 
