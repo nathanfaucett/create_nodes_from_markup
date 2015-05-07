@@ -10,36 +10,10 @@ var dummyNode = supports.dom ? environment.document.createElement("div") : null,
     reNodeName = /^\s*<(\w+)/;
 
 
-function getNodeName(markup) {
-    var nodeNameMatch = markup.match(reNodeName);
-    return nodeNameMatch && nodeNameMatch[1].toLowerCase();
-}
+module.exports = createNodesFromMarkup;
 
-function hasArrayNature(object) {
-    return (!!object &&
-        (typeof(object) === "object" || typeof(object) === "function") &&
-        ("length" in object) &&
-        !("setInterval" in object) &&
-        (typeof(object.nodeType) !== "number") &&
-        (
-            isArray(object) ||
-            ("callee" in object) ||
-            ("item" in object)
-        )
-    );
-}
 
-function createArrayFromMixed(object) {
-    if (!hasArrayNature(object)) {
-        return [object];
-    } else if (isArray(object)) {
-        return object.slice();
-    } else {
-        return toArray(object);
-    }
-}
-
-module.exports = function createNodesFromMarkup(markup, handleScript) {
+function createNodesFromMarkup(markup, handleScript) {
     var node = dummyNode,
         nodeName, wrap, wrapDepth, scripts, nodes;
 
@@ -77,4 +51,33 @@ module.exports = function createNodesFromMarkup(markup, handleScript) {
     } else {
         throw new Error("createNodesFromMarkup(markup, handleScript) dummy not initialized");
     }
-};
+}
+
+function getNodeName(markup) {
+    var nodeNameMatch = markup.match(reNodeName);
+    return nodeNameMatch && nodeNameMatch[1].toLowerCase();
+}
+
+function hasArrayNature(object) {
+    return (!!object &&
+        (typeof(object) === "object" || typeof(object) === "function") &&
+        ("length" in object) &&
+        !("setInterval" in object) &&
+        (typeof(object.nodeType) !== "number") &&
+        (
+            isArray(object) ||
+            ("callee" in object) ||
+            ("item" in object)
+        )
+    );
+}
+
+function createArrayFromMixed(object) {
+    if (!hasArrayNature(object)) {
+        return [object];
+    } else if (isArray(object)) {
+        return object.slice();
+    } else {
+        return toArray(object);
+    }
+}
