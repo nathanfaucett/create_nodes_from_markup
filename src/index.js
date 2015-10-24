@@ -1,4 +1,4 @@
-var forEach = require("for_each"),
+var arrayForEach = require("array-for_each"),
     supports = require("supports"),
     isArray = require("is_array"),
     toArray = require("to_array"),
@@ -39,7 +39,7 @@ function createNodesFromMarkup(markup, handleScript) {
             } else {
 
             }
-            forEach(createArrayFromMixed(scripts), handleScript);
+            arrayForEach(createArrayFromMixed(scripts), handleScript);
         }
 
         nodes = createArrayFromMixed(node.childNodes);
