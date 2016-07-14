@@ -1,9 +1,9 @@
-var arrayForEach = require("array-for_each"),
-    supports = require("supports"),
-    isArray = require("is_array"),
-    toArray = require("to_array"),
-    environment = require("environment"),
-    getMarkupWrap = require("get_markup_wrap");
+var arrayForEach = require("@nathanfaucett/array-for_each"),
+    supports = require("@nathanfaucett/supports"),
+    isArray = require("@nathanfaucett/is_array"),
+    toArray = require("@nathanfaucett/to_array"),
+    environment = require("@nathanfaucett/environment"),
+    getMarkupWrap = require("@nathanfaucett/get_markup_wrap");
 
 
 var dummyNode = supports.dom ? environment.document.createElement("div") : null,
