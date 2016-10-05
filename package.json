@@ -1,6 +1,6 @@
 {
   "name": "@nathanfaucett/create_nodes_from_markup",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "create nodes from markup",
   "repository": {
     "type": "git",
@@ -26,10 +26,10 @@
     "zuul": "^3.6.0"
   },
   "dependencies": {
-    "@nathanfaucett/environment": "^0.0.1",
+    "@nathanfaucett/environment": "^0.0.2",
     "@nathanfaucett/array-for_each": "^0.0.1",
-    "@nathanfaucett/get_markup_wrap": "^0.0.1",
-    "@nathanfaucett/supports": "^0.0.1",
+    "@nathanfaucett/get_markup_wrap": "^0.0.2",
+    "@nathanfaucett/supports": "^0.0.2",
     "@nathanfaucett/to_array": "^0.0.1",
     "@nathanfaucett/is_array": "^0.0.1"
   }
